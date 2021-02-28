@@ -23,14 +23,29 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.Card
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.OutlinedButton
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowDropUp
@@ -99,9 +114,11 @@ fun PuppyScreen(puppyId: String, navController: NavController) {
                     Text(text = puppy?.name ?: "")
                 },
                 navigationIcon = {
-                    IconButton(onClick = {
-                        navController.navigateUp()
-                    }) {
+                    IconButton(
+                        onClick = {
+                            navController.navigateUp()
+                        }
+                    ) {
                         Icon(Icons.Filled.ArrowBack, "Back")
                     }
                 },
@@ -168,9 +185,12 @@ fun List(list: List<Puppy>, clickPuppy: (String) -> Unit) {
             state = listState,
             modifier = Modifier.fillMaxWidth()
         ) {
-            items(items = list, itemContent = { item ->
-                ListItem(item = item, clickPuppy = clickPuppy)
-            })
+            items(
+                items = list,
+                itemContent = { item ->
+                    ListItem(item = item, clickPuppy = clickPuppy)
+                }
+            )
         }
         val showButton = listState.firstVisibleItemIndex > 0
 
@@ -202,9 +222,11 @@ fun ListItem(item: Puppy, clickPuppy: (String) -> Unit) {
         backgroundColor = MaterialTheme.colors.surface,
     ) {
         Column(
-            modifier = Modifier.clickable(onClick = {
-                clickPuppy(item.id)
-            }),
+            modifier = Modifier.clickable(
+                onClick = {
+                    clickPuppy(item.id)
+                }
+            ),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Box(
