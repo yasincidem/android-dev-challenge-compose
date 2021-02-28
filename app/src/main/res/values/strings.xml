@@ -10,4 +10,7 @@
       the License.
       -->
     <string name="app_name">AndroidDevChallenge</string>
+    <string name="puppy_list_screen">Puppies</string>
+    <string name="puppy_screen">Puppy</string>
+    <string name="details_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat augue odio, sed accumsan massa molestie quis. Nullam sem dui, consequat non odio in, bibendum iaculis est. In at lectus purus. Praesent pellentesque ac orci ut vulputate. Proin ut dui vitae dui tristique lacinia quis eget sapien. Morbi id risus nec urna luctus ullamcorper. Nulla pharetra ligula vitae ante sagittis faucibus. Nam mattis in ex sit amet tempus. Phasellus hendrerit odio vel tellus rutrum, efficitur sagittis quam accumsan.</string>
 </resources>
